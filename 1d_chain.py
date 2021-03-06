@@ -29,3 +29,34 @@ def odc(l=50, t0=-2., t1=-2.5, e1=-2.):
 
 if __name__=='__main__':
     odc()
+    
+    
+    
+ '''
+ import numpy as np
+import matplotlib.pyplot as plt 
+#Simulate One Dimansional impurity Atom Model 
+class Line_Model:
+    def __init__(self,natm=11,nimp=1,orgeng=0.,offset=-1.0,conj_ii=0.5,conj_ij=1.0):
+        self.num_atm = natm
+        self.imp_atm = nimp
+        self.off_set = offset
+        self.org_eng = orgeng
+        self.cnj_i2j = conj_ij
+        self.cnj_i2i = conj_ii
+        self.eff_hmt = np.matrix(np.zeros((natm,natm)))
+        self.eff_hmt[range(natm),range(-1,natm-1)] = conj_ii
+        self.eff_hmt[range(-1,natm-1),range(natm)] = conj_ii
+        #Hybrid impurity atom in one dimansional atom chain.
+        self.eff_hmt[range(nimp),range(nimp)] = offset
+        self.eff_hmt[range(nimp+1),range(-1,nimp)] = conj_ij
+        self.eff_hmt[range(-1,nimp),range(nimp+1)] = conj_ij
+        print(self.eff_hmt)
+        self.eig_val, self.eig_vec = np.linalg.eig(self.eff_hmt)
+        print(self.eig_val)
+        self.occ = np.array([ for l]).T
+        self.occ_val = np.array([np.sum(iline) for iline in self.occ])
+        print(self.occ_val)
+        
+test = Line_Model()
+'''
